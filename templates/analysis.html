@@ -1,0 +1,85 @@
+<!-- templates/analysis.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .analysis-section {
+            background-color: #000000;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        .section-title {
+            color: #4a90e2;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .analysis-content {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .analysis-content p {
+            margin-bottom: 1rem;
+        }
+        .analysis-content strong {
+            color: #4a90e2;
+        }
+        .analysis-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .analysis-content li {
+            margin-bottom: 0.5rem;
+        }
+        .btn-jobs {
+            background: #00c853;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .btn-jobs:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">📊 Career Analysis Report</h1>
+
+        <!-- Resume Summary -->
+        <div class="analysis-section">
+            <h3 class="section-title">📄 Professional Summary</h3>
+            <div class="analysis-content">
+                {{ summary|safe }}
+            </div>
+        </div>
+
+        <!-- Skills Gap Analysis -->
+        <div class="analysis-section">
+            <h3 class="section-title">🚧 Skills & Development Opportunities</h3>
+            <div class="analysis-content">
+                {{ gaps|safe }}
+            </div>
+        </div>
+
+        <!-- Career Roadmap -->
+        <div class="analysis-section">
+            <h3 class="section-title">🛣️ Recommended Career Path</h3>
+            <div class="analysis-content">
+                {{ roadmap|safe }}
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{{ url_for('get_jobs') }}" class="btn btn-jobs">
+                Discover Matching Opportunities 🚀
+            </a>
+        </div>
+    </div>
+</body>
+</html>
