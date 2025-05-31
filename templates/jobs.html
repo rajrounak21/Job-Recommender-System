@@ -1,0 +1,70 @@
+<!-- templates/jobs.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Recommendations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .job-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .job-title {
+            color: #1a237e;
+        }
+        .company-name {
+            color: #4a90e2;
+        }
+        .keyword-badge {
+            background: #4a90e2;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-5">Job Recommendations</h1>
+        <div class="text-center mb-4">
+            <span class="keyword-badge">{{ keywords }}</span>
+        </div>
+
+        <h3 class="mt-5 mb-3">🔗 LinkedIn Jobs</h3>
+        {% if linkedin_jobs %}
+            {% for job in linkedin_jobs %}
+            <div class="job-card">
+                <h4 class="job-title">{{ job.title }}</h4>
+                <p class="company-name">{{ job.companyName }}</p>
+                <p>📍 {{ job.location }}</p>
+                <a href="{{ job.jobUrl}}" target="_blank" class="btn btn-primary">
+                    View Job ➔
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-warning">No LinkedIn jobs found</div>
+        {% endif %}
+
+        <h3 class="mt-5 mb-3">🔗 Naukri Jobs</h3>
+        {% if naukri_jobs %}
+            {% for job in naukri_jobs %}
+            <div class="job-card">
+                <h4 class="job-title">{{ job.title }}</h4>
+                <p class="company-name">{{ job.companyName }}</p>
+                <p>📍 {{ job.location }}</p>
+                <a href="{{ job.jdURL }}" target="_blank" class="btn btn-primary">
+                    View Job ➔
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-warning">No Naukri jobs found</div>
+        {% endif %}
+    </div>
+</body>
+</html>
