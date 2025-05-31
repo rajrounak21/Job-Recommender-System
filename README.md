@@ -30,15 +30,7 @@ An AI-powered Resume Analyzer and Job Recommender System built using **Flask**, 
 * **Environment Management**: `python-dotenv`
 * **Security**: Flask session with `SECRET_KEY`
 
----
 
-### 📸 Screenshots
-
-| Resume Upload                                                     | Resume Summary & Skills Gap                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| ![upload](https://via.placeholder.com/400x200?text=Upload+Resume) | ![analysis](https://via.placeholder.com/400x200?text=AI+Analysis) |
-
----
 
 ### ⚙️ Setup Instructions
 
